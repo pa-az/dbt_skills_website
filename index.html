@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DBT Skills Training - A beautiful, minimalist, and interactive app designed to teach mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness.">
+    <title>DBT Skills Training App - Mindfulness & Balance</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --sage-green: #8FA998;
+            --deep-green: #4A6053;
+            --soft-beige: #F5F2EA;
+            --ocean-blue: #7B9B9F;
+            --background: #FCFBF8;
+            --text-dark: #2D3A3A;
+            --text-light: #5E6D6D;
+            --white: #FFFFFF;
+            --card-shadow: 0 10px 30px rgba(74, 96, 83, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        header {
+            background-color: rgba(252, 251, 248, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(74, 96, 83, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--deep-green);
+            text-decoration: none;
+        }
+
+        .logo-circle {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--sage-green), var(--ocean-blue));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(143, 169, 152, 0.3);
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--deep-green);
+        }
+
+        .cta-btn {
+            background-color: var(--deep-green);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 14px rgba(74, 96, 83, 0.2);
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 96, 83, 0.3);
+            background-color: #3b4e43;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 160px 20px 100px 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--deep-green);
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .app-mockup {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-frame {
+            width: 300px;
+            height: 600px;
+            background-color: #1e293b;
+            border-radius: 40px;
+            border: 12px solid #0f172a;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 25px;
+            background-color: #0f172a;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 10;
+        }
+
+        .phone-screen {
+            flex: 1;
+            background-color: #FCFBF8;
+            padding: 40px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+        }
+
+        /* Mockup Contents */
+        .mock-app-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--deep-green);
+            font-weight: 700;
+        }
+
+        .mock-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border: 1px solid rgba(74, 96, 83, 0.05);
+        }
+
+        .mock-icon-box {
+            width: 44px;
+            height: 44px;
+            background-color: rgba(143, 169, 152, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-green);
+            font-size: 1.2rem;
+        }
+
+        .mock-card-text {
+            flex: 1;
+        }
+
+        .mock-card-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .mock-card-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Features Section */
+        .features-section {
+            background-color: var(--soft-beige);
+            padding: 100px 20px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--deep-green);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Support / Contact Section */
+        .support-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .support-card {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(74, 96, 83, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(74, 96, 83, 0.15);
+            background-color: var(--background);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--sage-green);
+            background-color: var(--white);
+            box-shadow: 0 0 0 4px rgba(143, 169, 152, 0.15);
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            background-color: var(--deep-green);
+            color: var(--white);
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(74, 96, 83, 0.2);
+            transition: var(--transition);
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3b4e43;
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 24px 0;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 120px;
+            }
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            .hero-text p {
+                margin: 0 auto 40px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <div class="logo-circle">⛰️</div>
+                <span>DBT Skills</span>
+            </a>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#support">Support & Help</a>
+                <a href="#privacy">Privacy</a>
+            </nav>
+            <a href="#support" class="cta-btn">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- Hero Showcase Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Find Balance &amp; Clarity in Mind</h1>
+            <p>Learn interactive Dialectical Behavior Therapy (DBT) skills. Practice Wise Mind, STOP techniques, Distress Tolerance, and journal worksheets on a calming, nature-inspired interface.</p>
+            <a href="#features" class="cta-btn">Learn More</a>
+        </div>
+        <div class="app-mockup">
+            <!-- Simulated Premium iOS Mockup Frame -->
+            <div class="phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <div class="mock-app-bar">
+                        <span>Your DBT Journey</span>
+                        <span>⚙️</span>
+                    </div>
+                    
+                    <div class="mock-card">
+                        <div class="mock-icon-box">🧘</div>
+                        <div class="mock-card-text">
+                            <div class="mock-card-title">Session 1: Wise Mind</div>
+                            <div class="mock-card-subtitle">Balance emotion and reason.</div>
+                        </div>
+                        <div>❯</div>
+                    </div>
+
+                    <div class="mock-card">
+                        <div class="mock-icon-box">👁️</div>
+                        <div class="mock-card-text">
+                            <div class="mock-card-title">Session 2: Observe</div>
+                            <div class="mock-card-subtitle">Notice your thoughts and sensations.</div>
+                        </div>
+                        <div>❯</div>
+                    </div>
+
+                    <div class="mock-card">
+                        <div class="mock-icon-box">🛑</div>
+                        <div class="mock-card-text">
+                            <div class="mock-card-title">Session 4: STOP Skill</div>
+                            <div class="mock-card-subtitle">Guided pause in crises.</div>
+                        </div>
+                        <div>❯</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Interactive DBT Workbook Features</h2>
+                <p>Designed to help you master core behavior strategies interactively, anytime and anywhere.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>12 Structured Sessions</h3>
+                    <p>Flesh out exercises from the DBT workbook, starting from basic mindfulness up to advanced interpersonal behaviors.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⏳</div>
+                    <h3>Interactive Breathing</h3>
+                    <p>Visual wise mind animations guide you through paced respiration to regulate distress in high-pressure moments.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Worksheet Logging</h3>
+                    <p>Log distress ratings, prompting events, and skill practices directly into the secure app journal database.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="support-section">
+        <div class="support-card">
+            <div class="section-header" style="margin-bottom: 30px;">
+                <h2>App Support &amp; Assistance</h2>
+                <p>Need help with the app or have feedback? Drop us a message and our support team will get back to you shortly.</p>
+            </div>
+            
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will reply via email shortly.');">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message / Question</label>
+                    <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit">Submit Support Ticket</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section id="privacy" style="background-color: var(--white); padding: 80px 20px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: var(--deep-green); margin-bottom: 20px; text-align: center;">Privacy Policy &amp; Terms</h2>
+            <p style="color: var(--text-light); margin-bottom: 16px;">
+                Your privacy is extremely important to us. The <strong>DBT Skills Training</strong> application collects zero personal data from you. 
+            </p>
+            <p style="color: var(--text-light); margin-bottom: 16px;">
+                All worksheet entries, logs, and distress ratings are saved strictly on your local device storage using encryption and are never uploaded to any remote servers. You remain in complete control of your data.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 DBT Skills Training App. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#features">Features</a>
+            <a href="#support">Support</a>
+            <a href="#privacy">Privacy Policy</a>
+        </div>
+        <p style="color: rgba(255, 255, 255, 0.4); font-size: 0.8rem; margin-top: 20px;">Dialectical Behavior Therapy concepts are referenced from standard clinical workbooks.</p>
+    </footer>
+
+</body>
+</html>
