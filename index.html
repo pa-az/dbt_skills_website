@@ -396,6 +396,23 @@
             }
             .hero-text p {
                 margin: 0 auto 40px auto;
+        }
+
+        /* Promotion Section styles */
+        .promo-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .promo-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
             }
         }
     </style>
@@ -411,8 +428,9 @@
             </a>
             <nav>
                 <a href="#features">Features</a>
+                <a href="#promo">Ctrl+Alt App</a>
                 <a href="#support">Support & Help</a>
-                <a href="#privacy">Privacy</a>
+                <a href="privacy.html">Privacy Policy</a>
             </nav>
             <a href="./app/" class="cta-btn">Launch App</a>
         </div>
@@ -499,7 +517,37 @@
         </div>
     </section>
 
+    <!-- Ctrl+Alt Promo Section -->
+    <section id="promo" style="background-color: var(--soft-beige); padding: 100px 20px; border-top: 1px solid rgba(74, 96, 83, 0.05); border-bottom: 1px solid rgba(74, 96, 83, 0.05);">
+        <div class="promo-grid">
+            <div>
+                <span style="color: var(--sage-green); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; display: block; margin-bottom: 12px;">From the Creators of DBT Skills</span>
+                <h2 style="color: var(--deep-green); font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 24px;">Ctrl+Alt — Reclaim Your Digital Well-being</h2>
+                <p style="color: var(--text-light); font-size: 1.15rem; margin-bottom: 20px; max-width: 600px;">
+                    Ever feel like your apps are designed to keep you hooked? They are. <strong>Ctrl+Alt</strong> is an interactive educational app designed to teach you to recognize and resist deceptive design, attention hijacking, and behavioral loops.
+                </p>
+                <p style="color: var(--text-light); font-size: 1.15rem; margin-bottom: 36px; max-width: 600px;">
+                    Simulate and explore gamification features, phantom notifications, and infinite scrolling in a safe, mindful sandbox. Understand the psychological tricks used to capture your attention and learn how to configure your devices for real focus.
+                </p>
+                <a href="https://ctrl-alt.app" target="_blank" class="cta-btn" style="display: inline-block;">Visit Ctrl+Alt Website</a>
+            </div>
+            <div style="background-color: var(--white); border-radius: 28px; padding: 48px; box-shadow: var(--card-shadow); border: 1px solid rgba(74, 96, 83, 0.05); position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B, #4D96FF); border-radius: 22px; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 800; font-size: 2rem; margin-bottom: 24px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">👾</div>
+                <h3 style="color: var(--deep-green); font-size: 1.6rem; font-weight: 700; margin-bottom: 12px;">52 Deceptive Patterns</h3>
+                <p style="color: var(--text-light); font-size: 1.05rem; margin-bottom: 24px; max-width: 320px;">
+                    Practice mindful recognition of cognitive exploits and gamification tricks through interactive flashcards.
+                </p>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+                    <span style="background-color: var(--soft-beige); color: var(--deep-green); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Deceptive Design</span>
+                    <span style="background-color: var(--soft-beige); color: var(--deep-green); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Variable Rewards</span>
+                    <span style="background-color: var(--soft-beige); color: var(--deep-green); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Isolate Gamification</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Support Section -->
+
     <section id="support" class="support-section">
         <div class="support-card">
             <div class="section-header" style="margin-bottom: 30px;">
