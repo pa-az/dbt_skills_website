@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DBT Skills Training - A beautiful, minimalist, and interactive app designed to teach mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness.">
+    <meta name="description"
+        content="DBT Skills Training - A beautiful, minimalist, and interactive app designed to teach mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness.">
     <title>DBT Skills Training App - Mindfulness & Balance</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --sage-green: #8FA998;
@@ -154,7 +156,7 @@
             background-color: #1e293b;
             border-radius: 40px;
             border: 12px solid #0f172a;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -197,7 +199,7 @@
             background-color: var(--white);
             border-radius: 20px;
             padding: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
             display: flex;
             align-items: center;
             gap: 16px;
@@ -321,7 +323,8 @@
             color: var(--text-dark);
         }
 
-        .form-group input, .form-group textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
             padding: 14px;
             border-radius: 12px;
@@ -332,7 +335,8 @@
             transition: var(--transition);
         }
 
-        .form-group input:focus, .form-group textarea:focus {
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--sage-green);
             background-color: var(--white);
@@ -391,32 +395,18 @@
                 text-align: center;
                 padding-top: 120px;
             }
+
             .hero-text h1 {
                 font-size: 2.8rem;
             }
+
             .hero-text p {
                 margin: 0 auto 40px auto;
-        }
-
-        /* Promotion Section styles */
-        .promo-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 900px) {
-            .promo-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation Header -->
@@ -428,9 +418,8 @@
             </a>
             <nav>
                 <a href="#features">Features</a>
-                <a href="#promo">Ctrl+Alt App</a>
                 <a href="#support">Support & Help</a>
-                <a href="privacy.html">Privacy Policy</a>
+                <a href="#privacy">Privacy</a>
             </nav>
             <a href="./app/" class="cta-btn">Launch App</a>
         </div>
@@ -440,10 +429,13 @@
     <section class="hero">
         <div class="hero-text">
             <h1>Find Balance &amp; Clarity in Mind</h1>
-            <p>Learn interactive Dialectical Behavior Therapy (DBT) skills. Practice Wise Mind, STOP techniques, Distress Tolerance, and journal worksheets on a calming, nature-inspired interface.</p>
+            <p>Learn interactive Dialectical Behavior Therapy (DBT) skills. Practice Wise Mind, STOP techniques,
+                Distress Tolerance, and journal worksheets on a calming, nature-inspired interface.</p>
             <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px;">
                 <a href="./app/" class="cta-btn">Launch Web App</a>
-                <a href="#features" class="cta-btn" style="background-color: transparent; border: 2.5px solid var(--deep-green); color: var(--deep-green); box-shadow: none;">Learn More</a>
+                <a href="#features" class="cta-btn"
+                    style="background-color: transparent; border: 2.5px solid var(--deep-green); color: var(--deep-green); box-shadow: none;">Learn
+                    More</a>
             </div>
         </div>
         <div class="app-mockup">
@@ -455,7 +447,7 @@
                         <span>Your DBT Journey</span>
                         <span>⚙️</span>
                     </div>
-                    
+
                     <div class="mock-card">
                         <div class="mock-icon-box">🧘</div>
                         <div class="mock-card-text">
@@ -494,68 +486,43 @@
                 <h2>Interactive DBT Workbook Features</h2>
                 <p>Designed to help you master core behavior strategies interactively, anytime and anywhere.</p>
             </div>
-            
+
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🌿</div>
                     <h3>12 Structured Sessions</h3>
-                    <p>Flesh out exercises from the DBT workbook, starting from basic mindfulness up to advanced interpersonal behaviors.</p>
+                    <p>Flesh out exercises from the DBT workbook, starting from basic mindfulness up to advanced
+                        interpersonal behaviors.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">⏳</div>
                     <h3>Interactive Breathing</h3>
-                    <p>Visual wise mind animations guide you through paced respiration to regulate distress in high-pressure moments.</p>
+                    <p>Visual wise mind animations guide you through paced respiration to regulate distress in
+                        high-pressure moments.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">📝</div>
                     <h3>Worksheet Logging</h3>
-                    <p>Log distress ratings, prompting events, and skill practices directly into the secure app journal database.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ctrl+Alt Promo Section -->
-    <section id="promo" style="background-color: var(--soft-beige); padding: 100px 20px; border-top: 1px solid rgba(74, 96, 83, 0.05); border-bottom: 1px solid rgba(74, 96, 83, 0.05);">
-        <div class="promo-grid">
-            <div>
-                <span style="color: var(--sage-green); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; display: block; margin-bottom: 12px;">From the Creators of DBT Skills</span>
-                <h2 style="color: var(--deep-green); font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 24px;">Ctrl+Alt — Reclaim Your Digital Well-being</h2>
-                <p style="color: var(--text-light); font-size: 1.15rem; margin-bottom: 20px; max-width: 600px;">
-                    Ever feel like your apps are designed to keep you hooked? They are. <strong>Ctrl+Alt</strong> is an interactive educational app designed to teach you to recognize and resist deceptive design, attention hijacking, and behavioral loops.
-                </p>
-                <p style="color: var(--text-light); font-size: 1.15rem; margin-bottom: 36px; max-width: 600px;">
-                    Simulate and explore gamification features, phantom notifications, and infinite scrolling in a safe, mindful sandbox. Understand the psychological tricks used to capture your attention and learn how to configure your devices for real focus.
-                </p>
-                <a href="https://ctrl-alt.app" target="_blank" class="cta-btn" style="display: inline-block;">Visit Ctrl+Alt Website</a>
-            </div>
-            <div style="background-color: var(--white); border-radius: 28px; padding: 48px; box-shadow: var(--card-shadow); border: 1px solid rgba(74, 96, 83, 0.05); position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B6B, #4D96FF); border-radius: 22px; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 800; font-size: 2rem; margin-bottom: 24px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">👾</div>
-                <h3 style="color: var(--deep-green); font-size: 1.6rem; font-weight: 700; margin-bottom: 12px;">52 Deceptive Patterns</h3>
-                <p style="color: var(--text-light); font-size: 1.05rem; margin-bottom: 24px; max-width: 320px;">
-                    Practice mindful recognition of cognitive exploits and gamification tricks through interactive flashcards.
-                </p>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
-                    <span style="background-color: var(--soft-beige); color: var(--deep-green); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Deceptive Design</span>
-                    <span style="background-color: var(--soft-beige); color: var(--deep-green); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Variable Rewards</span>
-                    <span style="background-color: var(--soft-beige); color: var(--deep-green); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">Isolate Gamification</span>
+                    <p>Log distress ratings, prompting events, and skill practices directly into the secure app journal
+                        database.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Support Section -->
-
     <section id="support" class="support-section">
         <div class="support-card">
             <div class="section-header" style="margin-bottom: 30px;">
                 <h2>App Support &amp; Assistance</h2>
-                <p>Need help with the app or have feedback? Drop us a message and our support team will get back to you shortly.</p>
+                <p>Need help with the app or have feedback? Drop us a message and our support team will get back to you
+                    shortly.</p>
             </div>
-            
-            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will reply via email shortly.');">
+
+            <form action="#" method="POST"
+                onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will reply via email shortly.');">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" placeholder="John Doe" required>
@@ -576,12 +543,15 @@
     <!-- Privacy Section -->
     <section id="privacy" style="background-color: var(--white); padding: 80px 20px;">
         <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="color: var(--deep-green); margin-bottom: 20px; text-align: center;">Privacy Policy &amp; Terms</h2>
+            <h2 style="color: var(--deep-green); margin-bottom: 20px; text-align: center;">Privacy Policy &amp; Terms
+            </h2>
             <p style="color: var(--text-light); margin-bottom: 16px;">
-                Your privacy is extremely important to us. The <strong>DBT Skills Training</strong> application collects zero personal data from you. 
+                Your privacy is extremely important to us. The <strong>DBT Skills Training</strong> application collects
+                zero personal data from you.
             </p>
             <p style="color: var(--text-light); margin-bottom: 16px;">
-                All worksheet entries, logs, and distress ratings are saved strictly on your local device storage using encryption and are never uploaded to any remote servers. You remain in complete control of your data.
+                All worksheet entries, logs, and distress ratings are saved strictly on your local device storage using
+                encryption and are never uploaded to any remote servers. You remain in complete control of your data.
             </p>
         </div>
     </section>
@@ -594,8 +564,10 @@
             <a href="#support">Support</a>
             <a href="privacy.html">Privacy Policy</a>
         </div>
-        <p style="color: rgba(255, 255, 255, 0.4); font-size: 0.8rem; margin-top: 20px;">Dialectical Behavior Therapy concepts are referenced from standard clinical workbooks.</p>
+        <p style="color: rgba(255, 255, 255, 0.4); font-size: 0.8rem; margin-top: 20px;">Dialectical Behavior Therapy
+            concepts are referenced from standard clinical workbooks.</p>
     </footer>
 
 </body>
+
 </html>
